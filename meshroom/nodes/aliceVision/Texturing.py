@@ -1,4 +1,4 @@
-__version__ = "1.0"
+__version__ = "2.0"
 
 from meshroom.core import desc
 
@@ -81,6 +81,37 @@ class Texturing(desc.CommandLineNode):
             description='''Texture edge padding size in pixel''',
             value=15,
             range=(0, 100, 1),
+            uid=[0],
+        ),
+        desc.IntParam(
+            name='maxNbImagesForFusion',
+            label='Max Nb of Images For Fusion',
+            description='''Max number of images to combine to create the final texture''',
+            value=3,
+            range=(0, 10, 1),
+            uid=[0],
+        ),
+        desc.FloatParam(
+            name='bestScoreThreshold',
+            label='Best Score Threshold',
+            description='''(0.0 to disable filtering based on threshold to relative best score)''',
+            value=0.8,
+            range=(0.0, 1.0, 0.01),
+            uid=[0],
+        ),
+        desc.FloatParam(
+            name='angleHardThreshold',
+            label='Angle Hard Threshold',
+            description='''(0.0 to disable angle hard threshold filtering)''',
+            value=90.0,
+            range=(0.0, 180.0, 0.01),
+            uid=[0],
+        ),
+        desc.BoolParam(
+            name='forceVisibleByAllVertices',
+            label='Force Visible By All Vertices',
+            description='''Triangle visibility is based on the union of vertices visiblity.''',
+            value=False,
             uid=[0],
         ),
         desc.BoolParam(
