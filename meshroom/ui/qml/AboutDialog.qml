@@ -80,10 +80,24 @@ Dialog {
             MaterialToolButton {
                 text: MaterialIcons.bug_report
                 font.pointSize: 21
-                ToolTip.text: "Report a Bug"
+                ToolTip.text: "Report a Bug (GitHub account required)"
                 palette.buttonText: "#F44336"
                 property string body: "**Configuration**\n" + config.text
                 onClicked: Qt.openUrlExternally("https://github.com/alicevision/meshroom/issues/new?body="+body)
+            }
+            MaterialToolButton {
+                text: MaterialIcons.forum
+                font.pointSize: 21
+                palette.buttonText: Qt.lighter(systemPalette.buttonText, 1.3)
+                ToolTip.text: "Public Mailing-List (alicevision.googlegroups.com)"
+                onClicked: Qt.openUrlExternally("mailto:alicevision.googlegroups.com")
+            }
+            MaterialToolButton {
+                text: MaterialIcons.mail
+                font.pointSize: 21
+                palette.buttonText: Qt.lighter(systemPalette.buttonText, 1.3)
+                ToolTip.text: "Private Contact (alicevision-team.googlegroups.com)"
+                onClicked: Qt.openUrlExternally("mailto:alicevision-team.googlegroups.com")
             }
         }
 
