@@ -103,7 +103,7 @@ class Texturing(desc.CommandLineNode):
             name='angleHardThreshold',
             label='Angle Hard Threshold',
             description='''(0.0 to disable angle hard threshold filtering)''',
-            value=90.0,
+            value=0.0,
             range=(0.0, 180.0, 0.01),
             uid=[0],
         ),
