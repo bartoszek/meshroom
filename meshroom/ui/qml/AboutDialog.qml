@@ -133,6 +133,7 @@ Dialog {
             Layout.fillWidth: true
             implicitHeight: childrenRect.height
             spacing: 2
+            interactive: false
 
             model: ListModel {
                 // Meshroom Licenses
